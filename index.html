@@ -46,8 +46,6 @@ header img{height:28px;width:auto}
 .hero .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
 .en{font-size:var(--t-small);letter-spacing:.28em;font-weight:700;color:var(--muted)}
 .name{font-size:clamp(32px,4.6vw,52px);font-weight:900;letter-spacing:.06em;line-height:1.25}
-.creds{list-style:none;margin:12px 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.creds li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:4px 12px;font-size:15px;font-weight:700;line-height:1.6}
 h1{font-size:var(--t-h1);font-weight:900;line-height:1.55;margin:0}
 .mk{background:linear-gradient(transparent 62%,var(--accent) 62%)}
 .hero .sub{color:var(--muted)}
@@ -134,14 +132,20 @@ footer{padding-bottom:110px}
 @media (max-width:899px){
   .hero{padding:12px 16px 32px;gap:14px}
   .name{line-height:1.2}
-  .creds{margin:8px 0 12px;gap:6px}
-  .creds li{font-size:14px;padding:2px 10px}
   .hero h1{margin:0}
 }
-@media (max-width:899px) and (max-height:760px){
-  .hero .photo{aspect-ratio:1098/1225}
+@media (max-width:899px){
+  .hero .photo{aspect-ratio:1098/1130}
   .hero .photo img{object-position:50% 100%}
 }
+@media (max-width:899px){
+  .hero h1{font-size:min(calc((100vw - 32px) / 14.6), 36px)}
+}
+.creds{list-style:none;margin:12px 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.creds li{display:grid;gap:2px;align-content:center;justify-items:center;text-align:center;padding:10px 6px;border:0;border-left:1px solid var(--line);border-radius:0;background:none;font-size:inherit}
+.creds li:first-child{border-left:0}
+.creds b{font-size:clamp(17px,4.6vw,22px);font-weight:900;line-height:1.3;background:linear-gradient(transparent 62%,var(--accent) 62%)}
+.creds span{font-size:13px;font-weight:700;color:var(--muted);line-height:1.4}
 </style>
 </head>
 <body>
@@ -154,7 +158,7 @@ footer{padding-bottom:110px}
   <div>
     <p class="en">NAGAE MIZUKI</p>
     <p class="name">長江 瑞貴</p>
-    <ul class="creds" aria-label="実績"><li>パーソナルトレーナー歴8年</li><li>延べ指導実績1万件以上</li><li>表彰多数</li></ul>
+    <ul class="creds" aria-label="実績"><li><b>8年</b><span>パーソナル<br>トレーナー歴</span></li><li><b>1万件以上</b><span>延べ<br>指導実績</span></li><li><b>多数</b><span>表彰</span></li></ul>
     <h1 id="t-hero"><span class="ln"><span class="mk">延べ1万件のボディメイク</span>を</span><br><span class="ln">サポートしてきたトレーナーが</span><br><span class="ln">THE BANANAを選んだ理由。</span></h1>
   </div>
 </section>
